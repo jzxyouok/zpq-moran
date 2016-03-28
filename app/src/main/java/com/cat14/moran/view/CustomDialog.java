@@ -157,12 +157,14 @@ public class CustomDialog extends Dialog {
 
             if (mTitle != null) {                                                                   // 标题可以为空
                 ((TextView) layout.findViewById(R.id.tv_dialog_title)).setText(mTitle);             // 找到布局中的标题并赋值
+                mTitle = null;
             } else {
                 layout.findViewById(R.id.tv_dialog_title).setVisibility(View.GONE);                 // 不显示不占位
             }
 
             if (mMessage != null) {                                                                 // 内容可以为空
                 ((TextView) layout.findViewById(R.id.tv_dialog_message)).setText(mMessage);
+                mMessage = null;
             } else if (mContentView != null){                                                       // 可以自定义View填充内容
                 ((LinearLayout)layout.findViewById(R.id.ll_dialog_content)).removeAllViews();
                 ((LinearLayout)layout.findViewById(R.id.ll_dialog_content)).addView(
@@ -182,6 +184,7 @@ public class CustomDialog extends Dialog {
                                 }
                             });
                 }
+                mPositiveButtonText = null;                                                         // 添加完设置为空
             } else {
                 layout.findViewById(R.id.btn_dialog_positive)                                       // 不显示不占位
                         .setVisibility(View.GONE);
@@ -199,6 +202,7 @@ public class CustomDialog extends Dialog {
                                 }
                             });
                 }
+                mNegativeButtonText = null;
             } else {
                 layout.findViewById(R.id.btn_dialog_negative)                                       // 不显示不占位
                         .setVisibility(View.GONE);
@@ -208,5 +212,6 @@ public class CustomDialog extends Dialog {
             return dialog;
         }
     }
+
 
 }
