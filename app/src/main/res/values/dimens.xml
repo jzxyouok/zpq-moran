@@ -7,7 +7,15 @@
     <dimen name="logo_width">60dp</dimen>
     <dimen name="logo_height">90dp</dimen>
     <dimen name="sign_vertical_padding">10dp</dimen>
-    <dimen name="sign_view_height">36dp</dimen>
-    <dimen name="sign_text_size">16sp</dimen>
-    <dimen name="sign_button_size">16dp</dimen>
+
+    <dimen name="button_size">16dp</dimen>
+
+
+    <dimen name="view_height">36dp</dimen>
+    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_trim">5dp</dimen>
+    <dimen name="view_spacing_10">10dp</dimen>
+    <dimen name="view_spacing_16">16dp</dimen>
+    <dimen name="view_spacing_18">18dp</dimen>
 </resources>

@@ -30,3 +30,9 @@
 2. 完成login
 3. StringUtil和ToastUtil工具类完成
 4. 完成命名约定
+
+## 0.3.0
+1. 完成register
+2. MD5Util和NetStatusUtil和StreamUtil工具类完成
+3. 更改之前命名不统一情况
+4. 测试解析JSON基本无问题

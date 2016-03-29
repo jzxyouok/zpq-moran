@@ -64,4 +64,14 @@ public class StringUtil {
         return new String(c);
     }
 
+    /**
+     * 判断密码格式是否正确
+     *
+     * @param password 密码
+     * @return 判断结果
+     */
+    public static boolean isPasswordVaild(String password) {
+        return password.length() >= 6;
+    }
+
 }

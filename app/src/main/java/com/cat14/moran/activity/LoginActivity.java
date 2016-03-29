@@ -1,27 +1,32 @@
 package com.cat14.moran.activity;
 
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 
 import com.cat14.moran.R;
+import com.cat14.moran.utils.StringUtil;
 import com.cat14.moran.utils.ToastUtil;
 
 /**
- * 登陆应用界面
+ * 登陆界面
  */
 public class LoginActivity extends BaseActivity {
 
     private EditText mEmail;                    // 邮箱输入
     private EditText mPassword;                 // 密码输入
+    private SharedPreferences mPref;            //
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         initView();
+        mPref = getSharedPreferences("moran", MODE_PRIVATE);
     }
 
     /**
@@ -53,7 +58,7 @@ public class LoginActivity extends BaseActivity {
             mEmail.setError(getString(R.string.error_empty_email));
             focusView = mEmail;
             isValid = false;
-        } else if (!isEmailValid(email)) {
+        } else if (!StringUtil.isEmail(email)) {
             mEmail.setError(getString(R.string.error_pattern_email));
             focusView = mEmail;
             isValid = false;
@@ -64,17 +69,17 @@ public class LoginActivity extends BaseActivity {
             mPassword.setError(getString(R.string.error_empty_password));
             focusView = mPassword;
             isValid = false;
-        } else if (!isPasswordVaild(password)) {
+        } else if (!StringUtil.isPasswordVaild(password)) {
             mPassword.setError(getString(R.string.error_pattern_password));
             focusView = mPassword;
             isValid = false;
         }
 
-        // 根据焦点
+        // 根据焦点判断是否进行下一步
         if (!isValid) {
             focusView.requestFocus();
         } else if (email.equals("test@moran.com") && password.equals("12345")) {
-            ToastUtil.show(R.string.success_signin);
+            ToastUtil.show(R.string.success_login);
         } else {
             ToastUtil.show(R.string.error_invalid);
         }
@@ -82,31 +87,12 @@ public class LoginActivity extends BaseActivity {
     }
 
     /**
-     * 判断邮箱是否正确
-     *
-     * @param email 邮箱
-     * @return 判断结果
-     */
-    private boolean isEmailValid(String email) {
-        return email.contains("@");
-    }
-
-    /**
-     * 判断密码格式是否正确
-     *
-     * @param password 密码
-     * @return 判断结果
-     */
-    private boolean isPasswordVaild(String password) {
-        return password.length() >= 6;
-    }
-
-    /**
      * 注册按钮
      */
     public void register(View view) {
-
+        startActivity(new Intent(this, RegisterActivity.class));
     }
+
 
     @Override
     protected int getLayoutId() {

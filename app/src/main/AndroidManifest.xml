@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.cat14.moran"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest
+    package="com.cat14.moran"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 访问网络连接，可能产生GPRS流量 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 获取网络信息状态，如当前的网络连接是否有效 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- 允许程序写入外部存储，如SD卡上写文件 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".App"
         android:allowBackup="true"
-        android:icon="@drawable/menu_publish"
+        android:icon="@drawable/mdpi_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.LoginActivity">
+        <activity
+            android:name=".activity.LoginActivity"
+            android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <!-- 注册页面 -->
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:launchMode="singleInstance"/>
     </application>
 
 </manifest>

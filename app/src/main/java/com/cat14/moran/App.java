@@ -8,7 +8,9 @@ import android.content.Context;
  */
 public class App extends Application {
 
-    private static Context context;    
+    private static Context context;
+
+    private static String baseUrl="http://moran.chinacloudapp.cn/moran/web";
 
     /**
      * 在创建时获得全局Context
@@ -25,5 +27,15 @@ public class App extends Application {
      */
     public static Context getContext() {
         return context;
+    }
+
+    /**
+     * 获得API地址
+     *
+     * @param path 对应功能的地址
+     * @return String
+     */
+    public static String getUrl(String path) {
+        return baseUrl + path;
     }
 }

@@ -9,7 +9,10 @@ import android.os.Bundle;
 import com.cat14.moran.view.CustomDialog;
 
 /**
- * 基础活动类
+ * 基础活动抽象类
+ *
+ * 接口：布局ID设置，活动名设置
+ * 其他：自动实现提示框
  */
 public abstract class BaseActivity extends Activity {
 

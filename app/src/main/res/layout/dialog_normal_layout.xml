@@ -18,7 +18,7 @@
             android:layout_height="45dp"
             android:background="@drawable/shape_orange_5dp"
             android:gravity="center"
-            android:text="@string/prompt"
+            android:text="@string/dialog_prompt"
             android:textColor="@color/colorWhite"
             android:textSize="16sp"
             android:visibility="visible"/>
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/shape_orange_5dp"
-                android:text="@string/confirm"
+                android:text="@string/dialog_confirm"
                 android:textColor="@color/colorWhite"
                 />
 
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/shape_orange_5dp"
-                android:text="@string/cancel"
+                android:text="@string/dialog_cancel"
                 android:textColor="@color/colorWhite"/>
         </LinearLayout>
 
