@@ -20,6 +20,16 @@
         <activity
             android:name=".activity.LoginActivity"
             android:launchMode="singleInstance">
+
+        </activity>
+
+        <!-- 注册页面 -->
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:launchMode="singleInstance"/>
+
+        <!-- 广场页面 -->
+        <activity android:name=".activity.SquareActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -27,10 +37,6 @@
             </intent-filter>
         </activity>
 
-        <!-- 注册页面 -->
-        <activity
-            android:name=".activity.RegisterActivity"
-            android:launchMode="singleInstance"/>
     </application>
 
 </manifest>

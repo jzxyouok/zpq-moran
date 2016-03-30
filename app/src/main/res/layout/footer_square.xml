@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_alignParentBottom="true"
+              android:background="@color/colorGrey"
+              android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/radio_group_footer_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:measureWithLargestChild="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_button_footer_square"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_menu_square"
+            android:gravity="center"
+            android:text="@string/btn_menu_square"
+            android:textColor="@drawable/selector_text_color"/>
+
+        <RadioButton
+            android:id="@+id/radio_button_footer_publish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:drawableTop="@drawable/selector_menu_publish"/>
+
+        <RadioButton
+            android:id="@+id/radio_button_footer_my"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_menu_my"
+            android:gravity="center"
+            android:text="@string/btn_menu_square"
+            android:textColor="@drawable/selector_text_color"/>
+
+    </RadioGroup>
+</LinearLayout>

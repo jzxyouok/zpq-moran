@@ -1,7 +1,6 @@
 package com.cat14.moran.activity;
 
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -19,7 +18,7 @@ public class LoginActivity extends BaseActivity {
 
     private EditText mEmail;                    // 邮箱输入
     private EditText mPassword;                 // 密码输入
-    private SharedPreferences mPref;            //
+    private SharedPreferences mPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,8 +77,9 @@ public class LoginActivity extends BaseActivity {
         // 根据焦点判断是否进行下一步
         if (!isValid) {
             focusView.requestFocus();
-        } else if (email.equals("test@moran.com") && password.equals("12345")) {
+        } else if (email.equals("test@moran.com") && password.equals("1234567")) {
             ToastUtil.show(R.string.success_login);
+            showActivity(this, SquareActivity.class);
         } else {
             ToastUtil.show(R.string.error_invalid);
         }
@@ -90,7 +90,7 @@ public class LoginActivity extends BaseActivity {
      * 注册按钮
      */
     public void register(View view) {
-        startActivity(new Intent(this, RegisterActivity.class));
+        showActivity(this, RegisterActivity.class);
     }
 
 

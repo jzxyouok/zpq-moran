@@ -36,3 +36,9 @@
 2. MD5Util和NetStatusUtil和StreamUtil工具类完成
 3. 更改之前命名不统一情况
 4. 测试解析JSON基本无问题
+
+## 0.4.0
+1. 选择器
+2. 广场页面、广场页内容布局实现
+3. 完成Node类、ImageItem类
+4. 图片适配器完成
