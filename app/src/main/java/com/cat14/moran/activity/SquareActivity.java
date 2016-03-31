@@ -10,8 +10,10 @@ import android.widget.Spinner;
 
 import com.cat14.moran.R;
 import com.cat14.moran.adapter.NodeAdapter;
+import com.cat14.moran.model.ImageItem;
 import com.cat14.moran.model.Node;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -46,6 +48,73 @@ public class SquareActivity extends BaseActivity {
     }
 
     private void initDate() {
+
+        String user_id = mPref.getString("user_id", null);
+        String token = mPref.getString("token", null);
+
+        mNodes = new ArrayList<>();
+        Node node = new Node();
+        node.setAddress("01");
+        List<ImageItem> imageItems = new ArrayList<>();
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+
+        node.setImages(imageItems);
+        mNodes.add(node);
+        Node node2 = new Node();
+        node.setAddress("01");
+        List<ImageItem> imageItems2 = new ArrayList<>();
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+
+        node.setImages(imageItems);
+        mNodes.add(node);
+        Node node3 = new Node();
+        node.setAddress("01");
+        List<ImageItem> imageItems3 = new ArrayList<>();
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+
+        node.setImages(imageItems);
+        mNodes.add(node);
+        Node node4 = new Node();
+        node.setAddress("01");
+        List<ImageItem> imageItems4 = new ArrayList<>();
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+
+        node.setImages(imageItems);
+        mNodes.add(node);
+        Node node1 = new Node();
+        node.setAddress("01");
+        List<ImageItem> imageItems1 = new ArrayList<>();
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+        imageItems.add(new ImageItem(R.drawable.image01, "safdsaf"));
+
+        node.setImages(imageItems);
+        mNodes.add(node);
+
+
         handler.sendEmptyMessage(0);
     }
 
@@ -57,8 +126,6 @@ public class SquareActivity extends BaseActivity {
         mListView = (ListView) findViewById(R.id.list_square_context);
         mLogging = (LinearLayout) findViewById(R.id.ll_logging);
     }
-
-
 
 
     @Override

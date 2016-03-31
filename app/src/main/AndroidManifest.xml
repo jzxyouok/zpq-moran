@@ -20,7 +20,11 @@
         <activity
             android:name=".activity.LoginActivity"
             android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
 
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
 
         <!-- 注册页面 -->
@@ -29,12 +33,9 @@
             android:launchMode="singleInstance"/>
 
         <!-- 广场页面 -->
-        <activity android:name=".activity.SquareActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+        <activity android:name=".activity.SquareActivity"
+                  android:launchMode="singleInstance">
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
 
     </application>

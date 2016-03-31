@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.cat14.moran.view.CustomDialog;
@@ -17,6 +18,7 @@ import com.cat14.moran.view.CustomDialog;
 public abstract class BaseActivity extends Activity {
 
     private CustomDialog.Builder builder;
+    protected SharedPreferences mPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,7 @@ public abstract class BaseActivity extends Activity {
 
         setContentView(getLayoutId());
         builder = new CustomDialog.Builder(this);
+        mPref = getSharedPreferences("moran", MODE_PRIVATE);
     }
 
     /**

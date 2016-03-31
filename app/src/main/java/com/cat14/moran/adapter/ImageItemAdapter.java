@@ -33,7 +33,8 @@ public class ImageItemAdapter extends RecyclerView.Adapter<ImageItemAdapter.View
     // 替换视图控件的内容
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-
+        holder.mPhoto.setImageResource(mImageItems.get(position).getImageId());
+        holder.mComment.setText(mImageItems.get(position).getComment());
     }
 
     // 返回数据集包含项目的数量
@@ -52,7 +53,6 @@ public class ImageItemAdapter extends RecyclerView.Adapter<ImageItemAdapter.View
             super(itemView);
             mPhoto= (ImageView) itemView.findViewById(R.id.image_node_content);
             mComment = (TextView) itemView.findViewById(R.id.text_node_comment);
-
         }
     }
 }

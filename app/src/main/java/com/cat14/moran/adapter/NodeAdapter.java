@@ -59,18 +59,43 @@ public class NodeAdapter extends BaseAdapter {
 
             convertView.setTag(viewHolder);
         }
+        // 绑定数据
         viewHolder.addressTextView.setText(mNodes.get(position).getAddress());
         // 创建布局管理器
-        LinearLayoutManager layoutManger = new LinearLayoutManager(mContext);
+        AppLayoutManager layoutManger = new AppLayoutManager(mContext);
+        // 设置布局方向水平
         layoutManger.setOrientation(LinearLayout.HORIZONTAL);
+        // 关联布局
         viewHolder.imageRecyclerView.setLayoutManager(layoutManger);
 
+
+        // 创建数据适配器
         ImageItemAdapter itemAdapter = new ImageItemAdapter(mNodes.get(position).getImages());
+        viewHolder.imageRecyclerView.setAdapter(itemAdapter);
+
         return convertView;
     }
 
     static class ViewHolder {
         TextView addressTextView;
         RecyclerView imageRecyclerView;
+    }
+
+    static class AppLayoutManager extends LinearLayoutManager {
+
+        public AppLayoutManager(Context context) {
+            super(context);
+        }
+
+        @Override
+        public void onMeasure(RecyclerView.Recycler recycler, RecyclerView.State state, int widthSpec, int heightSpec) {
+            View view = recycler.getViewForPosition(0);
+            if (view != null) {
+                measureChild(view, widthSpec, heightSpec);
+                int measuredWidth = View.MeasureSpec.getSize(widthSpec);
+                int measuredHeight = view.getMeasuredHeight();
+                setMeasuredDimension(measuredWidth, measuredHeight);
+            }
+        }
     }
 }
